@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class Player : NetworkBehaviour
+public class NetworkPlayer : NetworkBehaviour
 {
     // 외부 프로퍼티
     public float moveSpeed = 7f;
