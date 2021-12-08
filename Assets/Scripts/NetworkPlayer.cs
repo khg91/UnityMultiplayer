@@ -25,7 +25,7 @@ public class NetworkPlayer : NetworkBehaviour
         if (IsLocalPlayer)  // 로컬 플레이어는 인풋을 통한 Translation 수행 후 RPC 호출
         {
             playerMovement.MoveByInput(moveSpeed);                          // 플레이어 이동 수행
-            playerMovement.RotateByInput();                                 // 플레이어 회전 수행
+            playerMovement.RotateByInput(Camera.main);                                 // 플레이어 회전 수행
             SetTransformServerRpc(transform.position, transform.rotation);  // 인풋으로 갱신된 Transform을 RPC로 전달
         }
         else                // 그 외에는 네트워크 멤버를 통한 transform 동기화

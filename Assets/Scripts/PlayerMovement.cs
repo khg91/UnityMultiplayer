@@ -18,11 +18,12 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// 인풋을 통한 Player 회전 (탑 다운 카메라로부터 마우스 레이캐스트 후 Transform.LookAt을 수행)
     /// </summary>
-    public void RotateByInput()
+    /// <param name="topdownCamera">플레이어의 Y축 위로부터 아래로의 카메라</param>
+    public void RotateByInput(Camera topdownCamera)
     {
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);   // 카메라(메인)의 마우스 Ray
-        Plane basePlane = new Plane(Vector3.up, Vector3.zero);              // 레이캐스트 기준바닥
-        float rayDistance;                                                  // 스크린 스페이스 마우스로부터 기준바닥 까지의 거리
+        Ray mouseRay = topdownCamera.ScreenPointToRay(Input.mousePosition); // 카메라의 마우스 Ray
+        Plane basePlane = new Plane(Vector3.up, transform.position);        // 레이캐스트 기준평면
+        float rayDistance;                                                  // 스크린 스페이스 마우스로부터 기준평면 까지의 거리
         Vector3 point = new Vector3();
 
         if (basePlane.Raycast(mouseRay, out rayDistance))
