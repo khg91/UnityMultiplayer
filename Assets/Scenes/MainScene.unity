@@ -867,7 +867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84698dd40c206c942910460617bad8ff, type: 2}
+  - {fileID: 2100000, guid: 240155e502ed61b4f882fa2b029f096d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1114,10 +1114,10 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 2007357337}
-    PlayerPrefab: {fileID: 7209729289554464360, guid: 800ed66ca2693534295a44a72c996e31, type: 3}
+    PlayerPrefab: {fileID: 7209729289554464360, guid: eeae64f5663ded44c8f7b89ba27152ae, type: 3}
     NetworkPrefabs:
     - Override: 0
-      Prefab: {fileID: 7209729289554464360, guid: 800ed66ca2693534295a44a72c996e31, type: 3}
+      Prefab: {fileID: 7209729289554464360, guid: eeae64f5663ded44c8f7b89ba27152ae, type: 3}
       SourcePrefabToOverride: {fileID: 7209729289554464360, guid: 65493f2a68b1a1148b0926314af49c32, type: 3}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
@@ -1159,6 +1159,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2007357336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdacd509b31834047a3b82e274518a9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cb9fa4c0c889904bae34ed22b008466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
