@@ -5,6 +5,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     /// <summary>
+    /// PlayerControlGUI의 요청을 처리하기 위한 Move
+    /// </summary>
+    /// <param name="vector">해당 벡터로 이동(Translate)</param>
+    public void Move(Vector3 vector)
+    {
+        transform.Translate(vector, Space.World);
+    }
+
+    /// <summary>
     /// 인풋을 통한 Player 이동 (input * moveSpeed * deltaTime)
     /// </summary>
     /// <param name="moveSpeed">이동속도</param>

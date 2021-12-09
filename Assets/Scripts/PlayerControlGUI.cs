@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(NetworkPlayer))]
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerControlGUI : MonoBehaviour
 {
+    PlayerMovement playerMovement;
+
     private void OnGUI()
     {
         const int sizeX = 300;
@@ -15,10 +17,11 @@ public class PlayerControlGUI : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(posX, posY, sizeX, sizeY));
         GUILayout.BeginHorizontal();
-        GUILayout.Button("↑");
-        GUILayout.Button("↓");
-        GUILayout.Button("←");
-        GUILayout.Button("→");
+        if (GUILayout.Button("↑")) playerMovement.Move(new Vector3(0f, 0f, 0.5f));
+        if (GUILayout.Button("↓")) playerMovement.Move(new Vector3(0f, 0f, -0.5f));
+        if (GUILayout.Button("←")) playerMovement.Move(new Vector3(-0.5f, 0f, 0f));
+        if (GUILayout.Button("→")) playerMovement.Move(new Vector3(0.5f, 0f, 0f));
+        // NetworkPlayer에서 RPC로 갱신해주기 때문에 여기서 따로 서버간 위치동기화를 하지 않음
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
     }
@@ -26,12 +29,6 @@ public class PlayerControlGUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerMovement = GetComponent<PlayerMovement>();
     }
 }
