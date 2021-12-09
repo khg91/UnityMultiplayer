@@ -17,6 +17,7 @@ public class PlayerControlGUI : MonoBehaviour
 
         GUILayout.BeginArea(new Rect(posX, posY, sizeX, sizeY));
         GUILayout.BeginHorizontal();
+        // 각 버튼에 따라 PlayerMovement.Move 수행
         if (GUILayout.Button("↑")) playerMovement.Move(new Vector3(0f, 0f, 0.5f));
         if (GUILayout.Button("↓")) playerMovement.Move(new Vector3(0f, 0f, -0.5f));
         if (GUILayout.Button("←")) playerMovement.Move(new Vector3(-0.5f, 0f, 0f));
@@ -25,8 +26,7 @@ public class PlayerControlGUI : MonoBehaviour
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
     }
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();

@@ -15,9 +15,9 @@ public class NetworkControlGUI : MonoBehaviour
         GUILayout.EndArea();
     }
 
-
-
-
+    /// <summary>
+    /// 서버를 만들거나 접속할 수 있는 GUI
+    /// </summary>
     static void StartButtons()
     {
         if (GUILayout.Button("Host"))
@@ -30,6 +30,9 @@ public class NetworkControlGUI : MonoBehaviour
             NetworkManager.Singleton.StartServer();
     }
 
+    /// <summary>
+    /// 서버를 만들거나 접속한 후 서버정보 간략 표시
+    /// </summary>
     static void StatusLabels()
     {
         var mode = NetworkManager.Singleton.IsHost ? "Host"
