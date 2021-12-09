@@ -14,6 +14,11 @@ public class NetworkPlayer : NetworkBehaviour
     NetworkVariable<Vector3> networkPosition = new NetworkVariable<Vector3>();
     NetworkVariable<Quaternion> networkRotation = new NetworkVariable<Quaternion>();
 
+    private void Awake()
+    {
+        transform.position = new Vector3(Random.Range(-3f, 3f), 1f, Random.Range(-3f, 3f));
+    }
+
     void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
